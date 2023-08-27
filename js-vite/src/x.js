@@ -9,3 +9,7 @@ export function whereami() {
 export function ping () {
   return 'pong';
 }
+
+export function pong () {
+  return 'ping'
+}

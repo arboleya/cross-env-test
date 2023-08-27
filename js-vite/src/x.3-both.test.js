@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { ping } from './x'
+import { ping, pong } from './x'
 
 /**
  * @group browser
@@ -7,4 +7,5 @@ import { ping } from './x'
  */
 test('ping-pong should work everywhere', () => {
   expect(ping()).toEqual('pong')
+  expect(pong()).toEqual('ping')
 })

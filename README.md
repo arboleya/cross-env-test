@@ -12,3 +12,6 @@ pnpm test
 ```
 
 Voilà.
+
+> Thigns to watch:<br/>
+> https://github.com/vitest-dev/vitest/issues/3930

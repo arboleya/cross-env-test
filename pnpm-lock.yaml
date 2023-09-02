@@ -20,12 +20,18 @@ devDependencies:
   nyc:
     specifier: ^15.1.0
     version: 15.1.0
+  playwright:
+    specifier: ^1.37.1
+    version: 1.37.1
+  typescript:
+    specifier: ^5.2.2
+    version: 5.2.2
   vitest:
     specifier: ^0.34.3
-    version: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(webdriverio@8.15.8)
+    version: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(playwright@1.37.1)(webdriverio@8.15.8)
   webdriverio:
     specifier: ^8.15.8
-    version: 8.15.8
+    version: 8.15.8(typescript@5.2.2)
 
 packages:
 
@@ -536,7 +542,7 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@puppeteer/browsers@1.4.6:
+  /@puppeteer/browsers@1.4.6(typescript@5.2.2):
     resolution: {integrity: sha512-x4BEjr2SjOPowNeiguzjozQbsc6h437ovD/wu+JpaenxVLm3jkgzHY2xOslMTp50HoTvQreMjiexiGQw1sqZlQ==}
     engines: {node: '>=16.3.0'}
     hasBin: true
@@ -551,6 +557,7 @@ packages:
       progress: 2.0.3
       proxy-agent: 6.3.0
       tar-fs: 3.0.4
+      typescript: 5.2.2
       unbzip2-stream: 1.4.3
       yargs: 17.7.1
     transitivePeerDependencies:
@@ -662,7 +669,7 @@ packages:
       magic-string: 0.30.3
       modern-node-polyfills: 0.1.3(rollup@2.79.1)
       sirv: 2.0.3
-      vitest: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(webdriverio@8.15.8)
+      vitest: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(playwright@1.37.1)(webdriverio@8.15.8)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -678,7 +685,7 @@ packages:
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.1.6
       test-exclude: 6.0.0
-      vitest: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(webdriverio@8.15.8)
+      vitest: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(playwright@1.37.1)(webdriverio@8.15.8)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -725,7 +732,7 @@ packages:
       pathe: 1.1.1
       picocolors: 1.0.0
       sirv: 2.0.3
-      vitest: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(webdriverio@8.15.8)
+      vitest: 0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(playwright@1.37.1)(webdriverio@8.15.8)
     dev: true
 
   /@vitest/utils@0.34.3:
@@ -3226,6 +3233,21 @@ packages:
       pathe: 1.1.1
     dev: true
 
+  /playwright-core@1.37.1:
+    resolution: {integrity: sha512-17EuQxlSIYCmEMwzMqusJ2ztDgJePjrbttaefgdsiqeLWidjYz9BxXaTaZWxH1J95SHGk6tjE+dwgWILJoUZfA==}
+    engines: {node: '>=16'}
+    hasBin: true
+    dev: true
+
+  /playwright@1.37.1:
+    resolution: {integrity: sha512-bgUXRrQKhT48zHdxDYQTpf//0xDfDd5hLeEhjuSw8rXEGoT9YeElpfvs/izonTNY21IQZ7d3s22jLxYaAnubbQ==}
+    engines: {node: '>=16'}
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      playwright-core: 1.37.1
+    dev: true
+
   /postcss@8.4.28:
     resolution: {integrity: sha512-Z7V5j0cq8oEKyejIKfpD8b4eBy9cwW2JWPk0+fB1HOAMsfHbnAXLLS+PfVWlzMSLQaWttKDt607I0XHmpE67Vw==}
     engines: {node: ^10 || ^12 || >=14}
@@ -3287,7 +3309,7 @@ packages:
       once: 1.4.0
     dev: true
 
-  /puppeteer-core@20.9.0:
+  /puppeteer-core@20.9.0(typescript@5.2.2):
     resolution: {integrity: sha512-H9fYZQzMTRrkboEfPmf7m3CLDN6JvbxXA3qTtS+dFt27tR+CsFHzPsT6pzp6lYL6bJbAPaR0HaPO6uSi+F94Pg==}
     engines: {node: '>=16.3.0'}
     peerDependencies:
@@ -3296,11 +3318,12 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@puppeteer/browsers': 1.4.6
+      '@puppeteer/browsers': 1.4.6(typescript@5.2.2)
       chromium-bidi: 0.4.16(devtools-protocol@0.0.1147663)
       cross-fetch: 4.0.0
       debug: 4.3.4
       devtools-protocol: 0.0.1147663
+      typescript: 5.2.2
       ws: 8.13.0
     transitivePeerDependencies:
       - bufferutil
@@ -3960,6 +3983,12 @@ packages:
       is-typedarray: 1.0.0
     dev: true
 
+  /typescript@5.2.2:
+    resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+    dev: true
+
   /ufo@1.3.0:
     resolution: {integrity: sha512-bRn3CsoojyNStCZe0BG0Mt4Nr/4KF+rhFlnNXybgqt5pXHNFRlqinSoQaTrGyzE4X8aHplSb+TorH+COin9Yxw==}
     dev: true
@@ -4085,7 +4114,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(webdriverio@8.15.8):
+  /vitest@0.34.3(@vitest/browser@0.34.3)(@vitest/ui@0.34.3)(playwright@1.37.1)(webdriverio@8.15.8):
     resolution: {integrity: sha512-7+VA5Iw4S3USYk+qwPxHl8plCMhA5rtfwMjgoQXMT7rO5ldWcdsdo3U1QD289JgglGK4WeOzgoLTsGFu6VISyQ==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -4135,13 +4164,14 @@ packages:
       magic-string: 0.30.3
       pathe: 1.1.1
       picocolors: 1.0.0
+      playwright: 1.37.1
       std-env: 3.4.3
       strip-literal: 1.3.0
       tinybench: 2.5.0
       tinypool: 0.7.0
       vite: 4.4.9(@types/node@20.5.6)
       vite-node: 0.34.3(@types/node@20.5.6)
-      webdriverio: 8.15.8
+      webdriverio: 8.15.8(typescript@5.2.2)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
       - less
@@ -4191,7 +4221,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /webdriverio@8.15.8:
+  /webdriverio@8.15.8(typescript@5.2.2):
     resolution: {integrity: sha512-fy+G9LRD1QHnWQpQ8SkIksOiz3YOu0RaOQ/hPqD9ugFlawMO6vY3sHLfcz7XRuBjio8piN5aHHuQZIlP6GAIig==}
     engines: {node: ^16.13 || >=18}
     peerDependencies:
@@ -4218,7 +4248,7 @@ packages:
       lodash.clonedeep: 4.5.0
       lodash.zip: 4.2.0
       minimatch: 9.0.3
-      puppeteer-core: 20.9.0
+      puppeteer-core: 20.9.0(typescript@5.2.2)
       query-selector-shadow-dom: 1.0.1
       resq: 1.11.0
       rgb2hex: 0.2.5

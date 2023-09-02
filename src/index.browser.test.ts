@@ -1,5 +1,4 @@
-import { expect, test } from 'vitest'
-import { whereami } from './x'
+import { whereami } from './index'
 
 /**
  * @group browser

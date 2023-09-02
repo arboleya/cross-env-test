@@ -1,5 +1,4 @@
-import { expect, test } from 'vitest'
-import { ping, pong } from './x'
+import { ping, pong } from './index'
 
 /**
  * @group browser

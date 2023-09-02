@@ -1,4 +1,5 @@
-import { whereami } from './x'
+import { whereami } from './index'
+
 
 /**
  * @group node

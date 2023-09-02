@@ -1,5 +1,3 @@
-import { Epa } from './a'
-
 export function whereami() {
   if (globalThis.document) {
     return 'browser'
